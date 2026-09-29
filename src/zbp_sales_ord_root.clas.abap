@@ -1,0 +1,5 @@
+CLASS zbp_sales_ord_root DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zsales_ord_h_i.
+ENDCLASS.
+
+CLASS zbp_sales_ord_root IMPLEMENTATION.
+ENDCLASS.

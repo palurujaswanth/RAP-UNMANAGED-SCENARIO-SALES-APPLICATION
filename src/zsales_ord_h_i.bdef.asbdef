@@ -1,0 +1,77 @@
+unmanaged implementation in class zbp_sales_ord_root unique;
+strict (2);
+with draft;
+
+define behavior for ZSALES_ORD_H_I alias SalesOrderHdr
+implementation in class zbp_sales_ord_h unique
+draft table zsales_ord_h_d
+lock master total etag LastChangedAt
+authorization master (instance)
+etag master LocalLastChangedAt
+{
+  create (authorization: global);
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+  draft action Activate optimized;
+  draft action Discard;
+
+  field (mandatory: create) SalesDocument;
+  field (readonly: update) SalesDocument;
+  field (readonly) LocalLastChangedAt, LastChangedAt;
+
+  association _salesItem { create; with draft; }
+
+  mapping for zsales_ord_h
+  {
+    SalesDocument       = salesdocument;
+    SalesDocumentType   = salesdocumenttype;
+    OrderReason         = orderreason;
+    SalesOrganization   = salesorganization;
+    DistributionChannel = distributionchannel;
+    Division            = division;
+    SalesOffice         = salesoffice;
+    SalesGroup          = salesgroup;
+    NetPrice            = netprice;
+    Currency            = currency;
+    LocalCreatedBy      = local_created_by;
+    LocalCreatedAt      = local_created_at;
+    LocalLastChangedBy  = local_last_changed_by;
+    LocalLastChangedAt  = local_last_changed_at;
+    LastChangedAt       = last_changed_at;
+  }
+}
+
+define behavior for ZSALES_ORD_I_I alias SalesOrderItm
+implementation in class zbp_sales_ord_i unique
+draft table zsales_ord_i_d
+lock dependent by _salesHeader
+authorization dependent by _salesHeader
+etag master LocalLastChangedAt
+{
+  update;
+  delete;
+
+  field (readonly: update, mandatory: create) SalesItemNumber;
+  field (readonly) SalesDocument;
+
+  association _salesHeader { with draft; }
+
+  mapping for zsales_ord_i
+  {
+    SalesDocument      = salesdocument;
+    SalesItemNumber    = salesitemnumber;
+    Material           = material;
+    Plant              = plant;
+    Quantity           = quantity;
+    QuantityUnits      = quantityunits;
+    LocalCreatedBy     = local_created_by;
+    LocalCreatedAt     = local_created_at;
+    LocalLastChangedBy = local_last_changed_by;
+    LocalLastChangedAt = local_last_changed_at;
+    LastChangedAt      = last_changed_at;
+  }
+}

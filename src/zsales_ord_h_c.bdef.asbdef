@@ -1,0 +1,26 @@
+projection;
+strict (2);
+use draft;
+
+define behavior for ZSALES_ORD_H_C
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+  use action Resume;
+
+  use association _salesItem { create; with draft; }
+}
+
+define behavior for ZSALES_ORD_I_C
+{
+  use update;
+  use delete;
+
+  use association _salesHeader { with draft; }
+}

@@ -1,0 +1,5 @@
+@EndUserText.label: 'Sales Service Definition - Unmanaged'
+define service ZSALES_ORD_UI {
+  expose ZSALES_ORD_H_C;
+  expose ZSALES_ORD_I_C;
+}

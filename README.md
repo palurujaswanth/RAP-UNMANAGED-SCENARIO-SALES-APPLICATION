@@ -31,13 +31,11 @@ This repository delivers an **Unmanaged Header-Item composition architecture** s
 
 ## Architecture
 <p align="center">
-  <a href="https://gitdiagram.com/palurujaswanth/rap-unmanaged-scenario-sales-application">
-    <img
-      src="https://gitdiagram.com/diagram-badge.svg"
-      alt="View Architecture Diagram"
-      width="120"
-    />
-  </a>
+  <img
+    src="diagram (4).png"
+    alt="RAP Unmanaged Sales Application Architecture"
+    width="750"
+  />
 </p>
 
 

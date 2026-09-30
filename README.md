@@ -32,9 +32,9 @@ This repository delivers an **Unmanaged Header-Item composition architecture** s
 ## Architecture
 <p align="center">
   <img
-    src="diagram (4).png"
+    src="Architecture.png"
     alt="RAP Unmanaged Sales Application Architecture"
-    width="750"
+    width="120"
   />
 </p>
 

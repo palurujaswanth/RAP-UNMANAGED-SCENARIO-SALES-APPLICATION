@@ -30,9 +30,15 @@ This repository delivers an **Unmanaged Header-Item composition architecture** s
 ---
 
 ## Architecture
-<a href="https://gitdiagram.com/palurujaswanth/rap-unmanaged-scenario-sales-application?utm_source=readme&utm_medium=badge">
-  <img src="https://gitdiagram.com/diagram-badge.svg" alt="Architecture diagram" width="120">
-</a>
+<p align="center">
+  <a href="https://gitdiagram.com/palurujaswanth/rap-unmanaged-scenario-sales-application">
+    <img
+      src="https://gitdiagram.com/diagram-badge.svg"
+      alt="View Architecture Diagram"
+      width="120"
+    />
+  </a>
+</p>
 
 
 ## 📂 Repository Artifacts
